@@ -14,6 +14,7 @@ body {
 #wrapper {
 	max-width: 1200px;
   margin: 0 auto;
+  padding: 0 1em 1em 0;
 }
 
 dl {
@@ -45,6 +46,13 @@ dd {
   padding-top: .2em;
 }
 
-@media (max-device-width: 640px) {
-   dl { @include column(12); }
+@media (max-width: 640px) {
+  body {
+    overflow-x: hidden;
+  }
+
+  dl {
+    @include column(12);
+    margin-bottom: 1em;
+  }
 }
