@@ -8,7 +8,7 @@ $total-width: 100%;
 
 $blackish: #333;
 $greyish: #f2f2f2;
-$border-color: #ccc;
+$border-color: #fff;
 $bright-color: #74D0F1;
 
 body {
@@ -30,15 +30,17 @@ a:hover {
 header {
   @include column(12);
   background-color: $bright-color;
-  padding: .5%;
+  padding: 2% .5%;
   box-sizing: border-box;
+  border: .5em solid $border-color;
+  border-width: .5em 0;
 
   h1, h2 {
     font-weight: bold;
     font-size: 200%;
     display: block;
     max-width: 1200px;
-    margin: .5em auto;
+    margin: 0 auto;
     padding: 0 .5%;
     box-sizing: border-box;
   }
@@ -61,10 +63,11 @@ dl {
   margin: .5% 0;
   padding: .5% 1%;
   box-sizing: border-box;
-  border-left: 1px solid $border-color;
+  border: 2px solid $border-color;
+  border-width: 0 0 0 2px;
 
   &:last-child {
-    border-right: 1px solid $border-color;
+    border-width: 0 2px;
   }
 
   &:hover {
@@ -81,20 +84,28 @@ dl {
   }
 
   dd {
-    margin-bottom: 3%;
+    line-height: 1.5em;
+
+    &:last-child {
+      margin-bottom: 3%;
+    }
   }
 }
 
 
 @media (max-width: 640px) {
   header {
-    padding: 1% 3%;
+    padding: 2% 3%;
   }
 
   dl {
     @include column(12);
-    border-bottom: 1px solid $border-color;
+    border-width: 0 0 2px 0;
     height: 6em;
     padding: 2% 3%;
+
+    &:last-child {
+      border-width: 0;
+    }
   }
 }
