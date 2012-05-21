@@ -3,56 +3,100 @@
 
 $columns: 12;
 $column-width: 60;
-$gutter-width: 20;
+$gutter-width: 0;
 $total-width: 100%;
+
+$blackish: #333;
+$greyish: #f2f2f2;
+$border-color: #ccc;
+/*$bright-color: #00C1DA;*/
+$bright-color: #74D0F1;
 
 body {
   font-family: 'Helvetica Neue' sans-serif;
   font-size: .9em;
+  background-color: $greyish;
+  color: $blackish;
 }
 
-#wrapper {
-	max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 1em 1em 0;
+a:link, a:hover, a:visited, a:visited {
+  color: $bright-color;
+  text-decoration: none;
 }
 
-dl {
-  @include column(6);
-  @include border-radius(5px);
-  @include box-shadow();
+a:hover {
+  text-decoration: underline;
 }
 
-dt, dd {
-  margin: 0;
-  padding: 1em 1.5em;
-  background-color: #eef;
-}
+header {
+  @include column(12);
+  background-color: $bright-color;
+  padding: .5%;
+  box-sizing: border-box;
 
-dt {
-  font-weight: 600;
-  padding-bottom: .2em;
+  h1, h2 {
+    font-weight: bold;
+    font-size: 200%;
+    display: block;
+    max-width: 1200px;
+    margin: .5em auto;
+    padding: 0 .5%;
+    box-sizing: border-box;
+  }
 
-  &.header {
-    background-color: #cce;
-
-    h1 { margin-top: 0; }
-
-    border-bottom: 1px solid #fff;
+  h2 {
+    font-size: 130%;
+    color: #fff;
   }
 }
 
-dd {
-  padding-top: .2em;
+section {
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
+dl {
+  max-width: 1200px;
+  height: 10em;
+  @include column(3);
+  margin: .5% 0;
+  padding: .5% 1%;
+  box-sizing: border-box;
+  border-left: 1px solid $border-color;
+
+  &:last-child {
+    border-right: 1px solid $border-color;
+  }
+
+  &:hover {
+    background-color: $blackish;
+    color: $greyish;
+  }
+
+  dt {
+    font-weight: bold;
+    font-size: 150%;
+    padding-bottom: .2em;
+    margin-top: .5%;
+    height: 30%;
+  }
+
+  dd {
+    margin-bottom: .5%;
+    height: 70%;
+  }
+}
+
+
 @media (max-width: 640px) {
-  body {
-    overflow-x: hidden;
+  header {
+    padding: 1% 3%;
   }
 
   dl {
     @include column(12);
-    margin-bottom: 1em;
+    border-bottom: 1px solid $border-color;
+    height: 6em;
+    padding: 2% 3%;
   }
 }
