@@ -12,8 +12,6 @@ $greyish: #f8f8f8;
 $border-color: #fff;
 $blue: #74D0F1;
 
-@import url(http://fonts.googleapis.com/css?family=Pacifico|Didact+Gothic);
-
 @mixin serif {
   font-family: 'Pacifico', 'Georgia' serif;
   font-weight: 400;
