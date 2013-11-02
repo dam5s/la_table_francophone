@@ -7,7 +7,8 @@ $gutter-width: 0;
 $total-width: 100%;
 
 $blackish: #333;
-$greyish: #f2f2f2;
+$grey: #666;
+$greyish: #f8f8f8;
 $border-color: #fff;
 $blue: #74D0F1;
 
@@ -27,7 +28,7 @@ body {
   @include sans-serif;
   font-size: .9em;
   background-color: $greyish;
-  color: $blackish;
+  color: $grey;
 }
 
 a:link, a:hover, a:visited, a:visited {
@@ -49,6 +50,7 @@ header {
 
   h1 {
     @include serif;
+    color: $blackish;
   }
 
   h1, h2 {
@@ -89,10 +91,15 @@ dl {
   &:hover {
     background-color: $blackish;
     color: $greyish;
+
+    dt {
+      color: $greyish;
+    }
   }
 
   dt {
     @include serif;
+    color: $blackish;
     font-size: 150%;
     padding-bottom: .2em;
     margin-top: .5%;
