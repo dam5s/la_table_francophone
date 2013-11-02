@@ -9,17 +9,29 @@ $total-width: 100%;
 $blackish: #333;
 $greyish: #f2f2f2;
 $border-color: #fff;
-$bright-color: #74D0F1;
+$blue: #74D0F1;
+
+@import url(http://fonts.googleapis.com/css?family=Pacifico|Didact+Gothic);
+
+@mixin serif {
+  font-family: 'Pacifico', 'Georgia' serif;
+  font-weight: 400;
+}
+
+@mixin sans-serif {
+  font-family: 'Didact Gothic' 'Helvetica Neue' sans-serif;
+  font-weight: 400;
+}
 
 body {
-  font-family: 'Helvetica Neue' sans-serif;
+  @include sans-serif;
   font-size: .9em;
   background-color: $greyish;
   color: $blackish;
 }
 
 a:link, a:hover, a:visited, a:visited {
-  color: $bright-color;
+  color: $blue;
   text-decoration: none;
 }
 
@@ -29,14 +41,18 @@ a:hover {
 
 header {
   @include column(12);
-  background-color: $bright-color;
+  background-color: $blue;
   padding: 2% .5%;
   box-sizing: border-box;
   border: .5em solid $border-color;
   border-width: .5em 0;
 
+  h1 {
+    @include serif;
+  }
+
   h1, h2 {
-    font-weight: bold;
+    font-weight: 400;
     font-size: 200%;
     display: block;
     max-width: 1200px;
@@ -76,7 +92,7 @@ dl {
   }
 
   dt {
-    font-weight: bold;
+    @include serif;
     font-size: 150%;
     padding-bottom: .2em;
     margin-top: .5%;
