@@ -10,7 +10,7 @@ $blackish: #333;
 $grey: #666;
 $greyish: #f8f8f8;
 $border-color: #fff;
-$blue: #74D0F1;
+$blue: rgba(116, 208, 241, .8);
 
 @mixin serif {
   font-family: 'Pacifico', 'Georgia' serif;
@@ -25,7 +25,7 @@ $blue: #74D0F1;
 body {
   @include sans-serif;
   font-size: .9em;
-  background-color: $greyish;
+  background: $greyish image_url('debut_light.png') top left repeat;
   color: $grey;
 }
 
