@@ -1,0 +1,49 @@
+import io.bit3.jsass.*
+
+
+buildscript {
+    repositories {
+        jcenter()
+    }
+
+    dependencies {
+        classpath("io.bit3:jsass:5.4.3")
+    }
+}
+
+task("clean", type: Delete) {
+    delete.add("build")
+}
+
+task("buildSass") {
+    def inputFile = file("src/app.scss")
+    def outputFile = file("build/app.css")
+
+    inputs.dir(inputFile.parentFile)
+    outputs.file(outputFile)
+
+    doLast {
+        def compiler = new Compiler()
+        def options = new Options()
+        options.setOutputStyle(OutputStyle.COMPRESSED)
+
+        def cssOutput = compiler.compileFile(inputFile.toURI(), outputFile.toURI(), options)
+
+        outputFile.parentFile.mkdirs()
+        outputFile.write(cssOutput.css)
+    }
+}
+
+task("build", type: Copy) {
+    dependsOn("buildSass")
+
+    from("src") {
+        include("*.html")
+        include("*.png")
+    }
+    into("build")
+
+    doLast {
+        new File("build/Staticfile").createNewFile()
+    }
+}
