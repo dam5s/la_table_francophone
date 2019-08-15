@@ -40,6 +40,7 @@ task("build", type: Copy) {
     from("src") {
         include("*.html")
         include("*.png")
+        include("*.woff2")
     }
     into("build")
 
