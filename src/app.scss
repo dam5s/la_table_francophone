@@ -40,7 +40,7 @@ a:hover {
 
 header {
   background-color: $blue;
-  padding: 1rem 2rem;
+  padding: 1rem 0;
   box-sizing: border-box;
   border: .5rem solid $border-color;
   border-left: 0;
@@ -52,12 +52,12 @@ header {
   }
 
   h1, h2 {
+    padding: 0 2rem;
     font-weight: 400;
     font-size: 2rem;
     display: block;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 1rem;
     box-sizing: border-box;
   }
 
